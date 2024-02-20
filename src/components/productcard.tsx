@@ -79,7 +79,7 @@ function ProductCard({metamask, item}: any) {
         />
       </CardBody>
       <CardFooter className="justify-center pb-0 pt-2 px-4 flex-col items-center">
-        <Button isDisabled={!metamask.isMetaMaskConnected || item.hasWinner} onClick={bet} isLoading={isBetting} color="primary" variant="shadow">
+        <Button isDisabled={!metamask.isMetaMaskConnected || item.hasWinner || metamask.isOwner} onClick={bet} isLoading={isBetting} color="primary" variant="shadow">
           Bet
         </Button>
         {

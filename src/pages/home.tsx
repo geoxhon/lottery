@@ -23,6 +23,7 @@ export function TransferModal({mm}: any) {
               toast.success('Transfer Success', {
                   position: "top-right"
                 })
+              mm.checkMetaMaskConnection();
               setIsTransfering(false);
             })
             .catch((e: any) => {

@@ -10,7 +10,7 @@ const useMetaMask = () => {
   const [isOwner, setIsOwner] = useState(false);
   const [items, setItems] = useState([]);
   const [winners, setWinners] = useState([]);
-  const contractAddress = "0x01d48A560b4fB634C4cA49d5750484b7dd0A2B6D";
+  const contractAddress = "0x01e7c8127E154F9474426Ad592461e7d21428887";
   let web3Ref: any; 
   const web3Exists = () =>{
     return web3 !== 'undefined';

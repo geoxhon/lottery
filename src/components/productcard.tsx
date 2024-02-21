@@ -42,7 +42,7 @@ function ProductCard({metamask, item}: any) {
       const contract = metamask.connectToContract();
       const web3 = metamask.getWeb3();
       const accounts = await web3.eth.getAccounts();
-      contract.methods.bid(item.itemId, 1).send({from: accounts[0], value: web3.utils.toWei(0.005, 'ether')})
+      contract.methods.bid(item.itemId, 1).send({from: accounts[0], value: web3.utils.toWei(0.01, 'ether')})
       .then((result: any) => {
         metamask.getItems();
         onOpen();

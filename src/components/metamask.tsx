@@ -10,7 +10,7 @@ const useMetaMask = () => {
   const [isOwner, setIsOwner] = useState(false);
   const [items, setItems] = useState([]);
   const [winners, setWinners] = useState([]);
-  const contractAddress = "0x01e7c8127E154F9474426Ad592461e7d21428887";
+  const contractAddress = "0x86C1608Ea3B41C4c5753Fb7E9D367317422780B1";
   let web3Ref: any; 
   const web3Exists = () =>{
     return web3 !== 'undefined';
@@ -56,26 +56,6 @@ const useMetaMask = () => {
     }
     if (web3Exists()) {
         const contractABI = [
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "_itemId",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "bid",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "destroy",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
             {
                 "inputs": [],
                 "stateMutability": "payable",
@@ -126,39 +106,6 @@ const useMetaMask = () => {
                 ],
                 "name": "JustBidded",
                 "type": "event"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "_newNumberOfItems",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "reset",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "revealWinners",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-            {
-                "inputs": [
-                    {
-                        "internalType": "address payable",
-                        "name": "newOwner",
-                        "type": "address"
-                    }
-                ],
-                "name": "transfer",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
             },
             {
                 "anonymous": false,
@@ -214,9 +161,15 @@ const useMetaMask = () => {
             },
             {
                 "inputs": [],
-                "name": "withdraw",
-                "outputs": [],
-                "stateMutability": "payable",
+                "name": "REGISTRATION_FEE",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
                 "type": "function"
             },
             {
@@ -241,6 +194,26 @@ const useMetaMask = () => {
                     }
                 ],
                 "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_itemId",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "bid",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "destroy",
+                "outputs": [],
+                "stateMutability": "nonpayable",
                 "type": "function"
             },
             {
@@ -445,16 +418,36 @@ const useMetaMask = () => {
                 "type": "function"
             },
             {
-                "inputs": [],
-                "name": "REGISTRATION_FEE",
-                "outputs": [
+                "inputs": [
                     {
                         "internalType": "uint256",
-                        "name": "",
+                        "name": "_newNumberOfItems",
                         "type": "uint256"
                     }
                 ],
-                "stateMutability": "view",
+                "name": "reset",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "revealWinners",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address payable",
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "name": "transfer",
+                "outputs": [],
+                "stateMutability": "nonpayable",
                 "type": "function"
             },
             {
@@ -518,6 +511,13 @@ const useMetaMask = () => {
                     }
                 ],
                 "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "withdraw",
+                "outputs": [],
+                "stateMutability": "payable",
                 "type": "function"
             }
         ];
